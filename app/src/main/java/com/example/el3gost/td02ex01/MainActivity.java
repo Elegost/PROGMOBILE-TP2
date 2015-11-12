@@ -88,14 +88,14 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent)
     {
-        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == TAKENPHOTO) //si une photo a été prise
         {
             try
             {
-                photoBmp = (Bitmap) data.getExtras().get("data"); //on récupere le bitmap
+                photoBmp = (Bitmap) intent.getExtras().get("data"); //on récupere le bitmap
             }
             catch(NullPointerException ex)
             {
